@@ -107,6 +107,21 @@ ObjectRedisAdapter.prototype.hincrby = function (_key, _field, _increment, _call
 	_callback && _callback(null, map[field]);
 };
 
+ObjectRedisAdapter.prototype.hkeys = function (_key, _callback)
+{
+	//console.log('HKEYS', _key);
+
+	var keys = [];
+	var map = this.getMap(_key);
+
+	for (var key in map)
+	{
+		keys.push(key);
+	}
+
+	_callback && _callback(null, keys);
+};
+
 ObjectRedisAdapter.prototype.hset = function (_key, _field, _value, _callback)
 {
 	//console.log('HSET', _key, _field, _value);
@@ -627,4 +642,10 @@ ObjectRedisAdapter.prototype.quit = function() {};
 exports.create = function(_serverMap, _log)
 {
 	return new ObjectRedisAdapter();
+};
+
+exports.print = function (_error, _result)
+{
+	_error && console.log("Error: " + _error);
+    _result && console.log("Reply: " + _result);
 };
