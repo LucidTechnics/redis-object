@@ -244,7 +244,7 @@ ObjectRedisAdapter.prototype.incr = function (_key, _callback)
 
 ObjectRedisAdapter.prototype.set = function (_key, _value, _callback)
 {
-	console.log('SET', _key, _value, _callback);
+	//console.log('SET', _key, _value, _callback);
 	
 	this.database[_key] = _value;
 	_callback && _callback(null, 'OK');
