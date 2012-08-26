@@ -641,8 +641,14 @@ ObjectRedisAdapter.prototype.quit = function() {};
 
 ObjectRedisAdapter.prototype.print = function (_error, _result)
 {
-	_error && console.log("Error: " + _error);
-	_result && console.log("Reply: " + _result);
+	if (_error !== undefined && _error !== null)
+	{
+		console.log("Error: " + _error);
+	}
+	else
+	{
+		console.log("Reply: " + _result);
+	}
 };
 
 exports.create = function(_serverMap, _log)
