@@ -1,0 +1,23 @@
+{
+	"name": "redis-object",
+
+	"description": "Redis Object is a JavaScript implementation of the Redis. It is designed to mock Redis, not to replace it.",
+	"main": "./redis-object",
+	"author": "Bediako George <bediako.george@lucidtechnics.com>",
+	"version": "0.1.0",
+	"maintainers": [
+	{
+		"name": "Bediako George",
+		"email": "bediako.george@lucidtechnics.com",
+		"web": "http://www.lucidtechnics.com"
+	}
+	],
+	"repository" : { "type" : "git" , "url" : "http://github.com/LucidTechnics/redis-object.git" },
+	"bugs" : { "url" : "http://github.com/LucidTechnics/redis-object/issues" },
+	"licenses" :[
+	{
+		"type" : "MIT",
+		"url" : "http://github.com/LucidTechnics/redis-object/raw/master/LICENSE"
+	}
+	]
+}
