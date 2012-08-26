@@ -244,7 +244,7 @@ ObjectRedisAdapter.prototype.incr = function (_key, _callback)
 
 ObjectRedisAdapter.prototype.set = function (_key, _value, _callback)
 {
-	//console.log('SET', _key, _value);
+	console.log('SET', _key, _value, _callback);
 	
 	this.database[_key] = _value;
 	_callback && _callback(null, 'OK');
@@ -639,13 +639,13 @@ ObjectRedisAdapter.prototype.select = function(_key) {};
 
 ObjectRedisAdapter.prototype.quit = function() {};
 
+ObjectRedisAdapter.prototype.print = function (_error, _result)
+{
+	_error && console.log("Error: " + _error);
+	_result && console.log("Reply: " + _result);
+};
+
 exports.create = function(_serverMap, _log)
 {
 	return new ObjectRedisAdapter();
-};
-
-exports.print = function (_error, _result)
-{
-	_error && console.log("Error: " + _error);
-    _result && console.log("Reply: " + _result);
 };
